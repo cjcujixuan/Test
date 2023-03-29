@@ -26,7 +26,7 @@ public class ResultActivity extends AppCompatActivity {
         ImageView showpic = findViewById(R.id.ivShow);
 
 
-        if(bmi<18.5) {
+        if(bmi<18.50) {
             Mes = "體重過輕";
             showpic.setImageResource(R.mipmap.s1);
         } else if (bmi >=18.5 && bmi < 24) {
