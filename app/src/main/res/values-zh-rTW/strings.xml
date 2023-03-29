@@ -8,4 +8,6 @@
     <string name="sHeight">請輸入身高</string>
     <string name="gohome">返回主頁</string>
     <string name="goresult">結果</string>
+    <string name="rbmale">男性</string>
+    <string name="rbfemale">女性</string>
 </resources>

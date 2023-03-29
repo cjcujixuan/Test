@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton girl;
     private TextView demo;
     private RadioButton boy1;
+    private CheckBox kiwi;
+    private CheckBox apple;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void extracted() {
+        String msg = "";
+        if(boy.isChecked()) {
+            msg += boy.getText().toString();
+        }
+        else if(girl.isChecked()) {
+            msg += girl.getText().toString();
+        }
+        else{
+            demo.setText("尚未選取");
+        }
+
+        if(apple.isChecked()) {
+            msg += apple.getText().toString();
+        }
+        if(kiwi.isChecked()) {
+            msg += apple.getText().toString();
+        }
+
         if(boy.isChecked()) {
             demo.setText("男生");
         }
@@ -43,19 +64,12 @@ public class MainActivity extends AppCompatActivity {
             demo.setText("尚未選取");
         }
     }
+
+
 
     public void extracted(View view) {
-        if(boy.isChecked()) {
-            demo.setText("男生");
-        }
-        else if(girl.isChecked()) {
-            demo.setText(girl.getText());
-        }
-        else{
-            demo.setText("尚未選取");
-        }
+        extracted();
     }
-
     @SuppressLint("SetTextI18n")
     public void submit(View view) {
         String name = ed_name.getText().toString();
@@ -79,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
         boy1 = findViewById(R.id.rbmale);
         demo = findViewById(R.id.TVdemo);
 
+        apple = findViewById(R.id.cbapple);
+        kiwi = findViewById(R.id.cbapple);
 
 
     }

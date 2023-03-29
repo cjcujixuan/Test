@@ -112,14 +112,14 @@
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:onClick="extracted"
-            android:text="男" />
+            android:text="@string/rbmale" />
 
         <RadioButton
             android:id="@+id/rbfemale"
             android:layout_width="88dp"
             android:layout_height="wrap_content"
             android:onClick="extracted"
-            android:text="女" />
+            android:text="@string/rbfemale" />
     </RadioGroup>
 
     <TextView
@@ -131,5 +131,27 @@
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/edName"
         app:layout_constraintVertical_bias="0.735" />
+
+    <CheckBox
+        android:id="@+id/cbkiwi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="212dp"
+        android:onClick="extracted"
+        android:text="kiwi"
+        app:layout_constraintEnd_toStartOf="@+id/cbapple"
+        app:layout_constraintTop_toBottomOf="@+id/btnResult" />
+
+    <CheckBox
+        android:id="@+id/cbapple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="32dp"
+        android:onClick="extracted"
+        android:text="apple"
+        app:layout_constraintEnd_toEndOf="@+id/btnResult"
+        app:layout_constraintTop_toBottomOf="@+id/btnResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
