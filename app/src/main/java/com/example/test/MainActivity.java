@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,11 +18,42 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_submit;
     private EditText ed_height;
     private EditText ed_weight;
+    private RadioButton boy;
+    private RadioButton girl;
+    private TextView demo;
+    private RadioButton boy1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
+
+        extracted();
+    }
+
+    private void extracted() {
+        if(boy.isChecked()) {
+            demo.setText("男生");
+        }
+        else if(girl.isChecked()) {
+            demo.setText(girl.getText());
+        }
+        else{
+            demo.setText("尚未選取");
+        }
+    }
+
+    public void extracted(View view) {
+        if(boy.isChecked()) {
+            demo.setText("男生");
+        }
+        else if(girl.isChecked()) {
+            demo.setText(girl.getText());
+        }
+        else{
+            demo.setText("尚未選取");
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -43,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
         btn_submit = findViewById(R.id.btnSummit);
         ed_height = findViewById(R.id.edHeight);
         ed_weight = findViewById(R.id.edWeight);
+        girl = findViewById(R.id.rbfemale);
+        boy1 = findViewById(R.id.rbmale);
+        demo = findViewById(R.id.TVdemo);
+
+
+
     }
 
     public void goResult(View view) {

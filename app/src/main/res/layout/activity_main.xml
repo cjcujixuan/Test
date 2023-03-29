@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnResult"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="goResult"
-        android:text="@string/goresult"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSummit" />
-
     <TextView
         android:id="@+id/tvShow"
         android:layout_width="wrap_content"
@@ -29,21 +15,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnSummit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="submit"
-        android:text="@string/btnsbmbit"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edWeight" />
 
     <EditText
         android:id="@+id/edName"
@@ -64,24 +35,101 @@
         android:id="@+id/edHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="38dp"
         android:ems="10"
         android:hint="@string/sHeight"
         android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/edWeight"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/edName"
-        app:layout_constraintTop_toBottomOf="@+id/edName" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Button
+        android:id="@+id/btnSummit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="submit"
+        android:text="@string/btnsbmbit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edWeight" />
+
+    <Button
+        android:id="@+id/btnResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="goResult"
+        android:text="@string/goresult"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSummit" />
 
     <EditText
         android:id="@+id/edWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="@string/sWeight"
         android:inputType="numberDecimal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="@+id/edName"
-        app:layout_constraintTop_toBottomOf="@+id/edHeight" />
+        app:layout_constraintBottom_toTopOf="@+id/btnSummit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edName" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="162dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="33dp"
+        android:checkedButton="@id/rbmale"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/edHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edName">
+
+        <RadioButton
+            android:id="@+id/rbmale"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:onClick="extracted"
+            android:text="男" />
+
+        <RadioButton
+            android:id="@+id/rbfemale"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:onClick="extracted"
+            android:text="女" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/TVdemo"
+        android:layout_width="70dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/edHeight"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/edName"
+        app:layout_constraintVertical_bias="0.735" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
